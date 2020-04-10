@@ -11,22 +11,19 @@ public class ChangeCalculator {
 
 	public static void main(String[] args) {
 
-		// Ask the user how many nickels they have
-		String nickles = JOptionPane.showInputDialog(null, "How many nickels do "
-				+ "you have?");
-		// Convert their answer to an int.   Hint: Integer.parseInt()  
-			Integer.parseInt(nickles);
-		
-			// Ask the user how many dimes they have, and convert their answer
-String dimes = JOptionPane.showInputDialog(null, "How many dimes do you have?");
-		Integer.parseInt(dimes);
-// Ask the user how many quarters they have, and convert their answer
-String quarters = JOptionPane.showInputDialog(null, "How many quarters do you have?");
-Integer.parseInt(quarters);
-// Calculate how much money the user has.  Hint: Use a double variable 
-
-		// Tell the user how much money they have in dollars and cents format (e.g. $6.75)
+		String nickles = JOptionPane.showInputDialog(null, "How many nickels do " + "you have?");
+		int numberOfNickles = Integer.parseInt(nickles);
+		String dimes = JOptionPane.showInputDialog(null, "How many dimes do you have?");
+		int numberOfDimes = Integer.parseInt(dimes);
+		String quarters = JOptionPane.showInputDialog(null, "How many quarters do you have?");
+		int numberOfQuarters = Integer.parseInt(quarters);
+		int nicklesToCents = numberOfNickles * 5;
+		int dimesToCents = numberOfDimes * 10;
+		int quartersToCents = numberOfQuarters * 25;
+		int total = quartersToCents + dimesToCents + nicklesToCents;
+		int dollars = total / 100;
+		int cents = total % 100;
+		JOptionPane.showMessageDialog(null, "You have $" + dollars + "." + cents + ". Spend it well!");
 
 	}
 }
-
